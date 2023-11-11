@@ -1,0 +1,770 @@
+﻿``` 
+     ____                               _                    _           
+    / ___|___  _ __ ___  _ __  _ __ ___| |__   ___ _ __  ___(_)_   _____ 
+   | |   / _ \| '_ ` _ \| '_ \| '__/ _ \ '_ \ / _ \ '_ \/ __| \ \ / / _ \
+   | |__| (_) | | | | | | |_) | | |  __/ | | |  __/ | | \__ \ |\ V /  __/
+    \____\___/|_| |_| |_| .__/|_|  \___|_| |_|\___|_| |_|___/_| \_/ \___|
+                        |_|
+_     _                     ____ _                _       _               _   
+| |   (_)_ __  _   ___  __  / ___| |__   ___  __ _| |_ ___| |__   ___  ___| |_ 
+| |   | | '_ \| | | \ \/ / | |   | '_ \ / _ \/ _` | __/ __| '_ \ / _ \/ _ \ __|
+| |___| | | | | |_| |>  <  | |___| | | |  __/ (_| | |_\__ \ | | |  __/  __/ |_ 
+|_____|_|_| |_|\__,_/_/\_\  \____|_| |_|\___|\__,_|\__|___/_| |_|\___|\___|\__|
+```             
+
+
+
+###########
+## GNOME ##
+###########
+
+Ctrl+Alt T Firefox
+Ctrl+Alt H Gedit
+Alt F12 Minimize window
+Alt F2 Toggle full screen
+Ctrl+Alt D Terminals (tty-s)
+Ctrl+Alt F7-F12 Restart X
+Ctrl+Alt Del Shutdown
+Super PgUp/PgDn Paste selected text
+
+
+NAUTILUS/NEMO:
+Ctrl L New folder
+Ctrl H Find next
+Ctrl+Shift G Clear highlights
+
+
+TERMINAL:
+Ctrl+Shift C Paste
+Ctrl+Shift T Close tab     
+Ctrl PgUp/PgDn Zoom
+Ctrl D Scroll lock
+
+
+BASH:
+Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
+Ctrl C Go to beginning of line
+Ctrl E Copy line
+Ctrl Y Last argument
+Ctrl R Show all matches for regular expression
+Ctrl+Alt E Edit command in editor
+Ctrl P Low level package manager for Debian.
+   -l Installs package from a package file.
+apt-get Updates local list of existing packages.
+   -u dist-upgrade Same as dist-upgrade, but will not remove installed packages or 
+           install new ones.
+   install <package> Removes package but leaves its configurations.
+   remove apt-listchanges Removes package and its configurations. Run `apt-get 
+           autoremove` after to remove all dependencies that are not needed 
+           anymore.
+   autoremove Downloads code.
+   build-dep <package> Answers with 'yes' to most questions (Except the ones that can have
+           potentially harmful consequences).
+   --force-yes Queries the APT's internal database. 
+   search <keyword> Shows package info like version, dependencies, etc.
+   showpkg <package> Shows installed and remote version.
+apt-file Search in which package a file is included.
+   update Enables package browsing (skin for apt-get).
+   search '~i!~M' Package search.
+
+winetricks Maintains symbolic links determining default commands.
+unattended-upgrade Searches the manual page names and descriptions (use quotes 
+       for phrases).
+   -a Displays one-line manual page description.
+whereis <cmd> Locates only the binary of a command.
+wtf Switches user.
+   - <user> Switches to root.
+man Section numbers: 1. Programs, 2. System calls, 3. Library calls,
+           4. Special files, 5. File formats, 7. Miscellaneous, 8. System 
+           administration commands
+echo Does not add newline at the end.
+   -e Passes output from one command to arguments of another:  
+       `echo -a | xargs ls`
+   -t Echoes command and asks for confirmation before execution.
+   -0 Sends output of a program to specified file and to standard 
+       output:  
+       `<cmd_1> | tee out_1.txt | <cmd_2>`
+   /dev/tty Evaluates passed expression.
+   1 + 1 Evaluates input. It's basically a calculator, but also provides some 
+       control commands.
+   echo 1 + 1 | bc Prints `.75000`.
+sh Starts new non-interactive shell and reads commands from 
+       arguments instead of `stdin`.  
+       To append lines to system configuration file run:  
+       `sudo sh -c 'echo "<text>" >> <file>'`
+bash Reads commands from arguments instead of `stdin`.
+   -n <script> Prints commands before execution. Useful for debugging.
+gcc Supresses warnings (Only prints errors).
+   -Wall Compile for debugging.
+   -std=<std> Optimization level. `0`: Reduce compilation time (default),
+       `1-3`: - Level of optimization, `s` - Optimize for size, `g` - Optimize
+       debugging experience.
+run-parts <dir> Tells and sets date and time.
+   -s <string> Sets time.
+timedatectl Sets timezone.
+cal Copies to clipboard.
+mkfifo <pipe> Creates a DVD/CD image.
+genisoimage Writes to a CD/DVD.
+acpi Shows partitions. 
+shutdown Takes you to the single user mode.
+   -h now At 11:50.
+   -r now Utility that maintains groups of programs.
+   -q Unconditionally makes all targets.
+
+
+FILES:
+ls  -d Sort by size 
+   -t One file per line
+   ./* Get inode number of file (file id). Use `sudo find / -inum <number>` to find all links that point to same file.
+cp  -i Verbose (Explains what is being done)
+   -R Preserve mode, ownership and timestamps
+   --preserve=all Interactive (Prompts before every removal)
+   -v Force remove (Does not prompt, useful if `rm` is aliased with `-i`)
+   -R Make parents if needed
+ln Makes symbolic link. If you want to use relative paths you must be in links directory !!!!!!!!!!!!!!!!!!!!!!
+df  -h Directory size
+mc Open parent dir in another panel
+   Ctrl o Search by name
+   -regex <regex> Insert before other options to negate
+   -maxdepth <levels> Find all hard links of a file
+   -xdev Find files with the inode number
+   -type <f|d|b|...> Delete found files
+   -exec <cmd> {} \; Find files and execute command with all filenames in place of `{}`
+   -atime +/-n Sends found files to a command as parameters. Uses `NUL` character as separator, necessary for filenames with spaces 
+locate <regex>   Ignore case
+   --regex Sends found files to a command as parameters.
+updatedb (sudo) Prints md5 sum hash of a file
+read Print after reading one character
+ -s Securely remove files
+file Ls in a tree-like (hierarchical) format
+install Decrypt file with password
+   -c Create a temporary file or directory in `/tmp` and returns it's name.
+rename  s/<from>/<to> <files> A fast, versatile, remote (and local) file-copying tool
+       -Hbaz -e ssh Compares two files, similar to diff but also for binaries
+stat Time of last modification of the file 
+readlink  -f Open file with default application for the file type
+dialog Execute command periodically
+
+
+ARCHIVES:
+dtrx  <archive> xvzf <file>.tar.gz (.tgz) Decompress and detar
+   -cf <archive>.tar <files> Backslash is necessary so that bash doesn't expand the `*`
+   -d <dir> Compress whole directory recursively.
+   -g <archive> <files> Extract files from rar archive
+zcat Switch between multiple virtual terminals (useful in ssh). Prefix for
+   a command is `Ctrl a`.
+   c Next, 
+   p Go to beginning of line,
+   | New region horizontally,
+   tab Close all but selected region,
+   X Enter copy/scrollback mode -> space: start/stop marking,
+   ] Kill window,
+   t Terminal multiplexer, better screen. Prefix for a command is `Ctrl b`. 
+   Most commands are the same as in `screen`.
+   ls Attach to running session
+   d Enter in copy mode and pageup, 
+   [ Paste,  
+   " Split vertically 
+
+
+====
+BASH:
+====
+
+"$x" Combines all the arguments into single word, separating them with first character of IFS variable. If IFS is not set, space is used. If IFS is null, no separator is used!!!!!!!!! No args provided will result in one empty string being passed on!!! 
+"$@" Number of arguments
+"$1" Name of the script
+$'\n' Exit code of last command (0 - Success)
+Ctrl-Z, kill %% Same as `[ <expr> ]`. Returns zero exit status if true.
+   -n Is string empty
+   -a Or
+   = File newer than
+   -ot Directory exists
+   -e Is a regular file
+   -h Has read permission
+   -w Has execute permission
+[[ <expr> ]] Regex comparison operator: `[[ "$HOST" =~ ^user.* ]]`
+let <expr> Same as `command`
+eval <variable> 0 - 32767
+input=`cat` In place of a file name means standard in or out
+set -o vi Put current dir on stack
+popd go to last dir
+source <script> Good practice to insert at beginning of a bash script
+export  PATH="$PATH:<dir>" Prompt for user input
+var=${1:-"<default>"} Parse parameters/arguments, builtin
+getopt Read from file line by line
+   -r Set completion function for command
+complete -p <cmd> Print all completions for pattern
+help <builtin> Wait for all background processes to end
+
+
+SAFETY:
+set Exit if any command fails
+   -u If any command in a pipeline fails, its return code is used as the return code of the whole pipeline
+IFS=$'\n\t' Run the last command as root 
+Execute a command without saving it in the history
+!<cmd> Redirect error output to `null`
+<cmd> &> /dev/null Write to stderr
+<cmd> 2>&1 | less 
+```
+
+${a[1]} Iterate over array
+${varname:offset:length} Length of a var 
+${#name[subscript]} Length  of the array
+
+
+ALIASES AND FUNCTIONS:
+alias Print alias
+   <name>='cmd' Executes original command, bypassing any aliases or shell functions that may be defined for command
+\<cmd> Will tell you what is command aliased to or if it is a builtin, function or a command
+   -P just check commands
+declare -F Print functions
+
+
+====
+TEXT:
+====
+
+PRINT:
+head Print all lines but the last n
+   -c <num_of_chars> -n+<line_num> Do not stop printing (follow)
+cat Number all lines
+   >> file Display only lines with pattern
+   -N Do not show `~` after `EOF`
+   +G Follow the input (to scroll up first press ctrl+c)
+   -F Opens editor defined in `$VISUAL` or `$EDITOR`
+   :n Go to home, end
+wc Edit file as sudo
+tr <from> <to> Delete characters
+cut <file> Only show the username and the shell
+sort Uniq, removes duplicates
+   -t Select by which field to sort 
+uniq Intersection
+   -u Columnate text
+   -t Shuffle input lines
+tac Join lines of two files on a common field
+colrm  [from [to]] Output numbers from 1 to number
+ispell, aspell Strips directory from path
+   -s .<suffix> Process multiple filenames
+dirname <path> Produce roughly uniform line lengths
+fold Glue two documents side by side
+sed Substitute every occurrence in line, not just the first one
+   's///I' Extended syntax, for `+`, `?`, ... Also you shouldn't escape the parenthesis
+   -r 's###e' Will make changes directly to the file (in place)
+   -u Print escape sequence (keycode) of a pressed key
+expand Set number of spaces (default is 8)
+   -i -u <files> Compare two directory trees
+colordiff Two files side by side
+comm Apply a diff file to original
+   patch < patch.diff Create patch
+
+
+SEARCH:
+grep <patt> <file> Inverse
+   -n Whole word 
+   -A<num> Print also num lines before
+   -r Print only matching part
+   -P Ignore case 
+   -I Just print files with matches 
+   -L Necessary to put before pattern if it starts with `-`!!!!!!! or if you want multiple patterns.
+   | wc -l Processes input line by line instead of in bigger chunks
+look Print all text parts of binary file
+
+
+CONVERT:
+todos, fromdos Converts text files to postscript, rtf, HTML
+gs Pdf to html
+pdftotext New Openoffice
+figlet Similar (Ascii art)
+cproto Simple text editor.
+   /etc/nanorc Syntax highlight files.
+   Alt + / or ? Cool text editor with CUA (IBM)-shortcuts
+diakonos Distraction free writing (gui)
+
+
+=======
+NETWORK:
+=======
+
+whois DNS lookup utility
+nslookup Same, lot of options
+hostname Displays contents of /proc/net files,  status of ports...
+   -r Show interfaces
+arp Tool used to display or modify the routing table
+   add default gw <ip> Turn network interface on/off 
+   <ip> netmask <mask> up Will bring eth0 up if it is currently down.
+ip  link show Bring interface eth0 up or down
+   addr show Set default gateway
+traceroute, traceroute6, traceroute6.iputils Similar (iputils package)
+mtr List info about machines that respond to SMB name queries - Windows based machines sharing their hard disks
+/etc/services Network management daemon, configuration file is in /etc/NetworkManager/NetworkManager.conf 
+nm-tool Is network connected 
+nmcli (netcat) It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning...
+ncat Show status of eth0
+   -S Change settings (speed, duplex,...)
+ss -tupl List active connections to/from system
+
+
+WIRELESS:
+iwconfig <option> List wireless networks in range 
+iwspy Accesses configuration options specific to a particular device
+rfkill  list Block/unblock wireless device
+iw dev wlan0 Show link status of wlan0
+       set biterates <standard> List wireless networks in range 
+wavemon Mail client
+sftp (openssh-server) ssh server deamon, on Windows service is named 'CYGWIN sshd'
+
+/etc/init.d/ssh restart (sudo) Start openssh deamon 
+ssh-keygen -t rsa -C <email> SSH client
+   <user>@<address> "mpg321 -" < <file>.mp3 Kill unresponsive session
+scp Download files from WWW
+   -O Continue downloading unfinished file. Can also use wildcards, but use single quotes around url. 
+   -r -l1 --no-parent -A.gif Similar
+   -qO - Urls specified by standard input
+transmissioncli Download limit (kB/s)
+   -u Download from YouTube
+noip2 Remote Desktop Protocol client
+tin, nn Rss feed reader
+
+
+BROWSERS:
+lynx Write keystrokes to script
+   -cmd_script=<file> Log requested URLs with syslog.
+   -dumb Same, turns numbers off
+   -source Add the current link to your bookmark file 
+   a Options (you can select vim mode)
+   ctrl+n Scroll up two lines
+   ctrl+p Next line
+elinks -sP 192.168.1.1-3 Port scanning
+   -O 192.168.1.3 (sudo) Sniffer (show network traffic) 
+   -l Multipurpose sniffer/interceptor/logger for switched LAN (can detect man in the middle, denial of service, DNS spoofing)
+driftnet Wireless 802.11b monitoring tool
+aircrack-ng Password recovery tool for Microsoft Operating Systems
+dnsniff For man in the middle attack
+   dsniff Set network interface to promiscuous mode
+           multicast off In cinnamon
+uname -a Show name and version of distribution
+
+init Change system runlevel
+dmesg Print all system configuration variables
+nohup <cmd> Run a command immune to hangups in background, do not save output
+wmctrl Tiled window manager
+   -k Combines tiny versions of many common UNIX utilities into a single small executable. (1.5 Mb)
+mono Prints logged in users
+who Logged in users, also what are they running
+vipw Edit groups file
+umask Modify user account information
+   -l <new_name> <old_name> 
+   -d /my/new/home <user> Also move the files
+useradd <user> More high level (use `adduser <user> sudo`  after to add user to sudo group)
+   --system Add user to group (only takes effect after login!!!)
+groups <user> Remove user and his home dir
+deluser  -remove-all-files <user> Change password
+
+
+FILE SYSTEMS:
+mkfs Create a ext filesystem
+mkswap Partition manipulation program
+   -l (sudo) Manipulate disk partition table
+   -l (sudo) Nice GUI partition tool
+mount For example mount /dev/hdc2 to /mymedia
+lsattr Change file attributes
+rkhunter -c Undelete files on NTFS partition 
+
+
+LOGGING:
+last Displays a list of users and what day/time they logged into the 
+   system.  
+   To get all failed logins run:  
+   `cat /var/log/auth.log | grep "failed password" -i`.
+rsyslogd Makes entries in the system log
+zeitgeist 'graphic' representation of system load
+top Change resource
+htop Displays memory statistics 
+   -s <seconds> Performance of system components / virtual memory statistics
+sar Disk usage
+time <cmd> Profiler
+
+
+TRACING:
+auditd Querys the audit logs
+autrace Controls the behavior of the auditd server
+strace <cmd> Maximum string size we want printed (default is too short, 2000 is OK)
+   -f Attach to process
+   -o <file> Count/aggregate
+   -T List library calls made by command
+lsof Open files by process
+   <path> Show which kernel modules (drivers) are loaded
+modinfo <module> List all hardware 
+lspci [-tv] Show usb info
+lscpu Display bios/dmi information like ram size/type,
+   max ram, computer model name, cpu information.
+smartctl  -A /dev/sda Do a read speed test
+badblocks  -s /dev/sda Discard unused blocks, useful for ssd-s
+sensors (fancontrol) set fan speed
+
+
+TERMINAL:
+tty Change and print terminal line settings
+openvt Makes a typescript of everything printed on your terminal. Ctrl-d to stop recording.
+setterm Set cursor on/off
+gpm Remap keys
+setxkbmap -layout us Get keycodes of pressed keys
+xset Turn key autorepeat off 
+   r Load key mapping 
+showkey Set console font
+   /usr/share/consolefonts/Uni2-VGA16.psf.gz contains the default settings 
+jfbterm Change blue color in tty (first numeral after P means slot, and others shade)
+
+
+=========
+PROCESSES:
+=========
+
+ps --forest Virtual memory 
+   --sort <field> Similar
+pgrep <pattern> Also print process name
+pkill <pattern> Sends TERM signal to process
+   -kill <pid> Uses name instead of pid
+skill Stop all of the users processes
+   -cont <user> Sets the priority for a process (from max of -20 to min of 20)
+   -20 <cmd> Changes the priority of an existing process
+   +20 <pid> Works very similarly to skill
+   -10 -u root Report memory map of a process (mapped file)
+
+
+JOBS:
+Ctrl z Prints currently running job
+bg <job_id> Bring job to the foreground
+%n Job whose command line starts with s
+%% Previous job
+
+
+SCHEDULED COMMANDS:
+at List jobs currently in 'at' queue
+atrm Schedule commands for repeating execution 
+cron Print status of cron
+   sudo service cron [stop|start|restart] Set logging lever
+   cat /var/log/cron Like cron but it catches up with tasks next time the computer gets turned on
+
+
+SERVICES:   
+service Restart the ssh server
+   httpd status Print status of all services
+   You can also execute the shell script directly from /etc/init.d folder like: /etc/init.d/httpd stop. 
+
+
+SYSTEM RUNLEVELS:
+runlevel Shuts down the system
+   1 Same as 3 but without networking / multiuser with X server
+   3 User defined
+   5 Reboots
+   S Set audio level (curses)
+amixer Disable pc-speaker, beep 
+
+cmus Movie/music player
+mpg321 Plays ogg
+aplay Plays audio
+arecord <file>   Set file format (cd)
+   -d <seconds> Out.mp3 Lists all files tags
+sound-juicer Cd burner
+traverso Displays an image
+montage Labels images
+convert <old> <new> Captures screen-shots from the X server
+mogrify Command line text recognition tool
+ocrad Creates picture of random planet or clouds
+gnuplot Leave plots open after exit
+   plot <file>.dat Display images inside tty
+
+VIDEO:
+ffmpeg -i <file_in> <file_out> Video and audio format converter (libav-tools)
+
+openshot Gui movie editor 
+aview, asciiview Executed at every shell startup, user specific
+/etc/bash.bashrc First file found executed at login, user specific 
+/etc/profile Last startup script executed, runs command as su
+
+
+HOME:
+~/.Xmodmap Key programs like ls, cat, bash, ...
+/sbin Distribution managed programs
+/usr/sbin User programs not managed by the distribution package
+/usr/local/sbin Default programs for extensions 
+/etc/passwd Groups 
+/etc/default Set console (tty) character set, font size, ...
+/etc/fstab Links to default application versions (here you can change the default Java JDK)
+/etc/issue Automatic mounts are handled by configuring the file
+/etc/sudoers List of places where to look for packages
+
+
+SERVICES:
+/etc/init/, ~/.init/  Init Folder with service scripts, that get executed at start and end
+   /halt Startup scripts for different runlevels - Links to scripts in /etc/init.d - S85httpd -> S means startup, K is for stop. (To disable service just change S for K)
+/etc/rc.local Sshd config
+/etc/ssh/sshd_config System-wide crontab
+/etc/cron.hourly, /etc/cron.daily, ... Log conf (need to restart rsyslogd after edit)
+/etc/syslog.conf Dns information
+/etc/sysconfig  /networking/devices/ifcfg-eth0 List of internet services with their port numbers
+/etc/NetworkManager  /NetworkManager.conf Information about the CPU
+/proc/modules Network related
+   /route Displays contents of /proc/net files
+/proc/iomem Partitions info
+/proc/acpi  /battery/BAT1/info Adapter info
+   /wakeup Enable device USB1 to wakeup computer from sleep/suspend
+/proc/net/wireless Java JREs and JDKs
+/usr/share  /man Bash completion functions
+
+
+SBIN:
+The "system-administrator's bin file".
+Hosts programs that would be in /bin if they didn't have "root-only" access permissions.
+
+
+VAR:
+"Variable"
+/var/log Logins
+   /syslog Contains data which is awaiting some kind of later processing
+
+
+BOOT:
+Kernels.
+/boot/grub/menu.lst Grub configuration file
+
+
+
+###########
+##  GIT  ##
+###########
+
+GIT MANTRA:
+```
+git init
+git add <file> OR git add .
+git status
+git commit -am "<commit_message>"
+```
+
+CLONE FROM GITHUB:
+git clone git@github.com:/<user>/<project> Check for existing keys: cd ~/.ssh; ls -al
+2. Add your key to the ssh-agent: ssh-add ~/.ssh/id_rsa
+4. Get info about state of remote
+   show origin `git@github.com:<user>/<repo>.git` - Change the url of origin, ssh key needed; `https://www.github.com/<user>/<repo>.git` - Same, but withouth key.
+git status -uno Checkout remote branch
+
+
+TAGS:
+git push --tags Pulling tags (automatically if on the same branch and there is a new commit?)
+
+
+UNDO:
+git reset  --hard HEAD~1 Delete last commit but keep your changes
+
+
+ALSO USEFUL:
+git checkout HEAD^ <file> Untrack file without deleting it
+git tag -a 0.9.1 -m "Version 0.9.1 release" List local tags
+chown -R <user>:<group> * (sudo) Generate patch file
+git rev-parse HEAD 
+git describe Print changed files by commit
+git log <file> List files
+git show <revision>:<file> Compare two commits
+git stash Apply the changes you stashed
+git stash list Show the diff of most recent stash
+git update-index --chmod=+x <file> Print repos configuration settings
+git config core.filemode false First save log to file
+git checkout <hash> Return to head
+
+
+GITHUB MD FORMAT:
+![Alt text](/doc/basket-stats.png?raw=true "<Description>") 
+git bisect bad Tell git the last good version you know about.
+   Now git will checkout a version in between, so you can check it and tell:
+git bisect bad/good Exit bisect mode
+
+
+TOOLS:
+gitk A bit nicer version
+tig Generates stats for git repo, outputs HTML
+
+
+VIRTUAL BOX:
+git config core.filemode false If problem pulling
+
+
+
+###########
+##  VIM  ##
+###########
+
++<linenum> Escape, key !!!!!!!!!!!!!!!!!
+ctrl+[ Execute last command again
+; Case insensitive search
+? Linewise visual mode
+~ Tab selection right 
+>> Paste before cursor
+x Open file under cursor
+K Select visual box (block select)
+:e Save file as and keep new file open (save as)
+
+
+HELP:
+ctrl+] Go back
+:q End of word
+E Start of WORD
+ge Sentence
+{, } Section
+:<num> Go to previous location
+ctrl+i Jump to matching bracket
+
+
+LINES:
+0 First non-blank of line
++,- First non-blank of next line
+
+
+SCREEN LINES:
+g0, g$ Middle of screen line
+gk, gj Go to top/middle/bottom of screen
+ctrl F,B Half page up/down
+ctrl E,Y Reposition line with cursor at top/middle/bottom
+
+
+SEARCH:
+*,# Same, but even when word is embedded
+% Move cursor forward/backward to x on current line
+tx,Tx Repeat/reverse last
+:%s/old/new/gc Move to position of last edit of file
+`. Position where you last exited vim
+
+
+INSERT MODE COMMANDS:
+ctrl+h Delete line
+ctrl+w Record actions (macro) into x
+q Execute x (macro)
+
+
+REGISTERS:
+"ayy Paste register a
+:reg Set x
+:set no<x>, <x>! Assign x
+:set <x>-=value Print all values
+:set <x>? Autoident (noai)
+backup, bk   Ignore case in search (noic)
+number, nu Display relative numbers (nornu)
+shiftwidth, sw Tab width (8)
+wrap Search wraps around file (ws)
+mouse=a Do not break words
+
+:set iskeyword-=. If both n and m are specified then n x m
+
+c, d, y Till the end of line
+cc, dd, yy Forward up to x
+c), d), y) Change case of character
+g~w To lower/upper case
+
+[p Replace character
+S Delete character/delete back
+. Increment/decrement number under cursor
+
+
+AUTOMATIC LINEBRAKE (WRAP):
+gq Format current line
+:set tw=72 No automatic wrapping, rewrapping will wrap to 72
+tw Controls whether or not automatic text wrapping is enabled, depending whether or not the t flag is set
+wm darkblue, torte Less contrast
+:highlight Normal ctermbg=grey Turn spellcheck on
+:set nospell Set dictionary
+z= Go to next misspelled word
+[s Open new tab
+gt, gT Switch tab
+vim -p Save and close tab (same as :wq)
+
+
+SPLITS:
+:vsp Move to split
+
+
+AUTOCOMPLETE:
+ctrl+n Convert to hex
+:%!xxd -r Install plugins
+
+
+REFORMAT CODE:
+= Download torrent file
+
+
+JAVA:
+javac -cp <path>:<path>... Reserve 6 giga for process
+   -jar <jar> Tell java where libraries are located, you also need to pass the location of class among paths, hence .:
+export _JAVA_OPTIONS=-Xmx1000m Run Java applet
+jps -lvm Memory map
+jvisualvm Create executable jar
+jar xf <jar> Print contents of a jar 
+
+
+INSTALL ORACLE JDK:
+```
+sudo apt-get remove openjdk*
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+```
+
+INSTALL ORACLE JDK ON DEBIAN:
+```
+echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+sudo apt-get install oracle-java7-set-default
+```
+
+FIREFOX:
+about:config Changes primary screen 
+   --output VGA1 --auto --pos 0x0   List devices
+   --auto Turn off laptop screen
+   --output [VGA|HDMI] --mode 1600x1200 Quick fix
+alt+shift+s Close pop-up console window
+ctrl+7, ctrl+/ Goto definition
+objectaid Drives tab to set drive
+wine explorer /desktop=abalaba,1024x768 app.exe Open menu
+regedit  
+[command prompt] net start sshd Run sshd (use windows password)
+
+
+GOLANG:
+go  build        Remove object files
+   env          Run go tool fix on packages
+   fmt          Download and install packages and dependencies (first you need to set GOPATH to dir where packages will get downloaded)
+   install      List packages
+   run          Test packages
+   tool         Print Go version
+   vet          `https://github.com/jnwhiteh/vim-golang`
+for gedit Go get github.com/nsf/termbox-go
+
+
+REPACKAGING A LINUX INSTALL ISO:
+```
+# Mount ISO
+mkdir -p /mnt/linux
+mount -o loop /tmp/linux-install.iso /mnt/linux
+```
+
+```
+# Copy contents to a working directory
+cd /mnt/
+tar -cvf )
+```
+
+```
+# Make your changes and repackage (on Debian use genisoimage). -c passes the name of the file that will be created
+cd /var/tmp/linux
+mkisofs -o ../your-new.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V Your Disk Name Here .
+```
+
+GDB:
+gdb <cmd> Start debugging
+run < <file> Follow trace
+print <variable> Set core file limit to unlimited
+gdb <cmd> core Go to address bar
